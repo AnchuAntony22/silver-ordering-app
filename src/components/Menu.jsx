@@ -9,7 +9,7 @@ const Menu = ({ items, addToOrder }) => {
           return (
             <div className="col-md-4" key={item.id}>
               <div className="card mb-4">
-                {/* Use backticks for template literals */}
+               
                 <img
                   src={`https://localhost:7184/api/MenuItems/${item.id}/image`} 
                   className="card-img-top" 
