@@ -1,0 +1,103 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #366b36;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: aliceblue;
+    flex-grow: 1;
+    font-weight: bold;
+
+}
+
+.navLinks li {
+    display: inline;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+.navLinks a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    background-image: url('./images/logo1.jpeg');
+    background-size: cover; 
+    background-position: center; 
+   
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.imagePlaceholder {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px auto;
+    font-size: 14px;
+    color: #666;
+}
+
+.button {
+    background-color: #007bffa7;
+    color: rgb(241, 245, 247);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.adList {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.app {
+    padding: 20px;
+    
+    
+}
+  
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+  
+.theme-toggle {
+    margin-bottom: 20px;
+}
+
+.menu h2, .order-list h2 {
+    margin-bottom: 20px;
+}
