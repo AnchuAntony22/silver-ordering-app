@@ -1,94 +1,171 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif; /* Similar to LivSo font */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Soft background color */
+}
+
+/* Navigation Bar */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #366b36;
+    padding: 15px 30px;
+    background-color: #2f4f4f; /* Darker, more modern shade */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navLinks {
     list-style: none;
     display: flex;
-    gap: 20px;
-    color: aliceblue;
-    flex-grow: 1;
-    font-weight: bold;
-
-}
-
-.navLinks li {
-    display: inline;
+    gap: 30px;
+    margin: 0;
 }
 
 .navLinks a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 .navLinks a:hover {
-    text-decoration: underline;
+    color: #cddc39; /* Accent color on hover */
 }
 
+/* Logo Styling */
 .logo {
-    width: 100px;
-    height: 50px;
+    width: 120px;
+    height: 60px;
     background-image: url('./images/logo1.jpeg');
-    background-size: cover; 
-    background-position: center; 
-   
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
 }
 
-.card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.imagePlaceholder {
-    width: 150px;
-    height: 150px;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px auto;
-    font-size: 14px;
-    color: #666;
-}
-
-.button {
-    background-color: #007bffa7;
-    color: rgb(241, 245, 247);
+/* Button Styling */
+button {
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.adList {
+button:hover {
+    background-color: #45a049;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: url('./images/ba2.jpg') no-repeat center center/cover; 
+    background-size: cover;
+    color: rgb(243, 249, 246);
+    text-align: center;
     padding: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #076267;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Cards */
+.card {
+  display: flex; /* Align contents flexibly */
+  flex-direction: column; /* Arrange contents vertically */
+  justify-content: center; /* Center contents vertically */
+  align-items: center; /* Center contents horizontally */
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.imagePlaceholder {
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-content: center;
+    gap: 20px;
+    padding: 40px;
 }
 
-
-.button:hover {
-    background-color: #0056b3;
+.grid .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.app {
-    padding: 20px;
-    
-    
+.grid .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-  
+
+/* Footer Styling */
+footer {
+    background-color: #2f4f4f;
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #cddc39;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
 .dark-mode {
     background-color: #121212;
     color: white;
@@ -97,7 +174,241 @@
 .theme-toggle {
     margin-bottom: 20px;
 }
+.linkButton {
+    background: none; 
+    border: none; 
+    color: #007bff; 
+    text-decoration: underline; 
+    cursor: pointer; 
+    padding: 0; 
+    font: inherit; 
+  }
+  
+  .linkButton:hover {
+    color: #0056b3; 
+    text-decoration: underline; 
+  }
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the App takes at least the full height of the viewport */
+}
 
-.menu h2, .order-list h2 {
+.content {
+    flex: 1; /* Allow this to grow and take available space */
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Full viewport height */
+    background-color: #f5f5f5; /* Same as body background */
+}
+
+.login-title {
+    font-size: 36px;
+    color: #2f4f4f; /* Use your navigation bar color */
     margin-bottom: 20px;
 }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Fixed width for form */
+    padding: 20px;
+    background-color: white; /* Card-like appearance */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+    border-color: #cddc39; /* Accent color on focus */
+}
+
+.login-button {
+    background-color: #4CAF50; /* Same as your button style */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 150px; /* Set the width of the image */
+  height: 150px; /* Set the height of the image */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  margin-bottom: 10px;
+}
+
+.menu-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.menu-item p {
+  font-size: 14px;
+  color: #555;
+}
+
+.menu-item button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+  background-color: #45a049;
+}
+.menu-item-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Space between cards */
+    margin-top: 20px; /* Space above the card container */
+}
+
+.menu-item-card {
+    background-color: white; /* Card background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    padding: 15px; /* Padding inside the card */
+    margin: 10px; /* Space between cards */
+    width: calc(30% - 20px); /* Width of cards, adjusted for margins */
+    text-align: center; /* Center-align text */
+    transition: transform 0.2s; /* Smooth transform on hover */
+}
+
+.menu-item-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.menu-item-name {
+    font-size: 20px; /* Font size for item name */
+    margin: 10px 0; /* Margin above and below item name */
+}
+
+.menu-item-price {
+    font-size: 18px; /* Font size for price */
+    color: #555; /* Slightly darker color for price */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.menu-item-image {
+    width: 50%; /* Full width of card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for images */
+    margin-bottom: 10px; /* Space below image */
+}
+
+.menu-item-actions {
+    display: flex; /* Flexbox for action buttons */
+    justify-content: space-between; /* Space between buttons */
+}
+
+.edit-button, .delete-button {
+    background-color: #4CAF50; /* Same as your button style */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px; /* Smaller font for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.delete-button {
+    background-color: #f44336; /* Red for delete button */
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Darker red on hover */
+}
+
+
+
+.admin-form {
+    display: flex;
+    flex-direction: column; /* Stack form fields vertically */
+    margin-bottom: 20px; /* Space below the form */
+}
+
+.admin-form input {
+    margin-bottom: 10px; /* Space between inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+.add-item-button {
+    margin-bottom: 20px; /* Space below the button */
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-item-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.container {
+    position: relative; /* This allows absolute positioning of children */
+  }
+  
+  .cart-icon {
+    position: absolute; /* Positioning it absolutely */
+    top: 20px; /* Adjust this to move it down from the top */
+    right: 20px; /* Adjust this to move it from the right */
+    z-index: 100; /* Ensures it stays on top of other elements */
+  }
+.menu {
+    position: relative; /* Set position for relative positioning */
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px; /* Adjust as needed */
+    right: -10px; /* Adjust as needed */
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+  
